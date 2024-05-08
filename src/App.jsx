@@ -46,12 +46,18 @@ function App() {
           >
             Tables
           </span>
+
+          <span
+            className={`${
+              selectedComponent == "Accordion" ? "text-cyan-400 link" : "link"
+            }`}
+            onClick={() => setSelectedComponent("Accordion")}
+          >
+            Accordion
+          </span>
         </aside>
         <section className="bg-slate-50 p-10 w-full">{content}</section>
       </main>
-
-      
-      
     </div>
   );
 }

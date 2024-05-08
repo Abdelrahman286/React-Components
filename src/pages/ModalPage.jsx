@@ -31,54 +31,6 @@ const ModalPage = () => {
       </button>
 
       {showModal && modal}
-
-      <p className="text-5xl">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem ipsa
-        quia quidem possimus, officiis corporis repellat labore non quam
-        corrupti nesciunt eum ab modi animi eveniet ut veritatis? Ut,
-        exercitationem!
-      </p>
-
-      <p className="text-5xl">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem ipsa
-        quia quidem possimus, officiis corporis repellat labore non quam
-        corrupti nesciunt eum ab modi animi eveniet ut veritatis? Ut,
-        exercitationem!
-      </p>
-
-      <p className="text-5xl">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem ipsa
-        quia quidem possimus, officiis corporis repellat labore non quam
-        corrupti nesciunt eum ab modi animi eveniet ut veritatis? Ut,
-        exercitationem!
-      </p>
-
-      <p className="text-5xl">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem ipsa
-        quia quidem possimus, officiis corporis repellat labore non quam
-        corrupti nesciunt eum ab modi animi eveniet ut veritatis? Ut,
-        exercitationem!
-      </p>
-
-      <p className="text-5xl">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem ipsa
-        quia quidem possimus, officiis corporis repellat labore non quam
-        corrupti nesciunt eum ab modi animi eveniet ut veritatis? Ut,
-        exercitationem!
-      </p>
-
-      <p className="text-5xl">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem ipsa
-        quia quidem possimus, officiis corporis repellat labore non quam
-        corrupti nesciunt eum ab modi animi eveniet ut veritatis? Ut,
-        exercitationem!
-      </p>
-      <p className="text-5xl">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem ipsa
-        quia quidem possimus, officiis corporis repellat labore non quam
-        corrupti nesciunt eum ab modi animi eveniet ut veritatis? Ut,
-        exercitationem!
-      </p>
     </div>
   );
 };
