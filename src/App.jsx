@@ -24,7 +24,9 @@ function App() {
         <aside className="bg-gray-100 p-2 flex flex-col">
           <span
             className={`${
-              selectedComponent == "modal" ? "text-cyan-400 link" : "link"
+              selectedComponent == "modal"
+                ? "text-cyan-400 link selected-link"
+                : "link"
             }`}
             onClick={() => setSelectedComponent("modal")}
           >
@@ -32,7 +34,9 @@ function App() {
           </span>
           <span
             className={`${
-              selectedComponent == "dropdown" ? "text-cyan-400 link" : "link"
+              selectedComponent == "dropdown"
+                ? "text-cyan-400 link selected-link"
+                : "link"
             }`}
             onClick={() => setSelectedComponent("dropdown")}
           >
@@ -40,7 +44,9 @@ function App() {
           </span>
           <span
             className={`${
-              selectedComponent == "table" ? "text-cyan-400 link" : "link"
+              selectedComponent == "table"
+                ? "text-cyan-400 link selected-link"
+                : "link"
             }`}
             onClick={() => setSelectedComponent("table")}
           >
@@ -49,7 +55,9 @@ function App() {
 
           <span
             className={`${
-              selectedComponent == "Accordion" ? "text-cyan-400 link" : "link"
+              selectedComponent == "Accordion"
+                ? "text-cyan-400 link selected-link"
+                : "link"
             }`}
             onClick={() => setSelectedComponent("Accordion")}
           >

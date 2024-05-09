@@ -64,42 +64,105 @@ if (selection) {
   content = selection.label;
 }
 ```
-write this 
-```js 
-let content = selection?.label || 'Select...'
+
+write this
+
+```js
+let content = selection?.label || "Select...";
 ```
-- the `?` checks if the variable if defined or not, to avoid getting 
-error messages 
 
-- The `OR` operator returns the first truthy variable 
-    - undefined || 10   ---> it will return 10
-    
+- the `?` checks if the variable if defined or not, to avoid getting
+  error messages
 
-#### 210. Event capture & bubbling  
+- The `OR` operator returns the first truthy variable
+  - undefined || 10 ---> it will return 10
+
+#### 210. Event capture & bubbling
+
 🔹 When an event occurs, browsers wants to find event handlers to call.
-order in which this `search` occurs is divided into three phases 
+order in which this `search` occurs is divided into three phases
 ![alt text](image-2.png)
 
-1) phase one : capture phase 
-go to most parent of clicked element, see if it has handlder, go to the second most parent, etc 
+1. phase one : capture phase
+   go to most parent of clicked element, see if it has handlder, go to the second most parent, etc
 
 ![alt text](image-3.png)
 
-- it will check the body then the div if they have event handlers 
+- it will check the body then the div if they have event handlers
 
+2. Phase two : target phase
+   go to the clicked element, check to see if it has event handler
 
-2) Phase two : target phase 
-go to the clicked element, check to see if it has event handler 
+3. phase three: bubbling phase
+   go to parent of clicked element, see it has handler. then go to parent'parent...etc
 
-3) phase three: bubbling phase 
-go to parent of clicked element, see it has handler. then go to parent'parent...etc
+#### 212. why a capture phase handler
 
+- if we removed the `true` of the capture event, the detection of clicking inside the dropdown won't work as expected, since react takes time to rerender the component
 
-#### 212. why a capture phase handler 
-- if we removed the `true` of the capture event, the detection of clicking inside the dropdown won't work as expected, since react takes time to rerender the component 
+- when i click on one of the selection option,the options list have to disappear but the console.log() of will show `click outside`
 
-- when i click on one of the selection option,the options list have to disappear but the console.log() of will show  `click outside`
-
-- it takes more time at the bubbling phase 
+- it takes more time at the bubbling phase
 
 - performance.now()
+
+---
+
+# 🟩 How to make reusable table component
+
+- we gonna sent 2 props to the Table in order to make it reusable
+  1. Data
+  2. Config
+- inside the config array we gonna have
+  1. label
+  2. render function
+  3. sort function
+
+---
+
+### Sorting table data
+
+![alt text](image-4.png)
+
+- `data.sort()` it converts the array of numbers to string and
+  arrange them in a wrong way
+
+- pass a callback function that returns positive number or negative or 0
+
+🔹 to sort characters
+
+```js
+data.sort((a, b) => {
+  return a.localeCompare(b);
+});
+```
+
+🔹to sort an array of objects
+
+```js
+data.sort((a, b) => {
+  const valueA = a.cost;
+  const valueB = b.cost;
+
+  return valueA - valueB;
+});
+```
+
+- To get the reverse of sorting
+  - multipy the return value by `-1` and manage it with a flag
+- check if we have header function to render the header cell
+
+- use Fragment since we can't put `div` inside `td` element 
+```js
+const renderedHeaders = config.map((column) => {
+  if (column.header) {
+    return column.header();
+  }
+  return <th key={column.label}>{column.label}</th>;
+});
+```
+
+- to mark a column as being sortable, just add the sort function inside the config obj 
+
+
+- 
